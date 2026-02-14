@@ -1,24 +1,66 @@
----
-layout: default
-title: Blog
-description: Read our latest insights on product marketing, strategy, and startup growth.
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | PMM Kickstarter</title>
+    <meta name="description" content="Read our latest insights on product marketing, strategy, and startup growth.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PMM Kickstarter</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle">🌙 Dark</button></li>
+            </ul>
+            <div class="burger">
+                <div style="width:25px;height:3px;background:var(--text-color);margin:5px;"></div>
+                <div style="width:25px;height:3px;background:var(--text-color);margin:5px;"></div>
+                <div style="width:25px;height:3px;background:var(--text-color);margin:5px;"></div>
+            </div>
+        </nav>
+    </header>
 
-<h1>Latest Articles</h1>
-<div class="grid">
-    
-    {% for post in site.posts %}
-    <article class="card">
-        <h2>{{ post.title }}</h2>
-        <p style="font-size:0.9rem; opacity:0.8; margin-bottom: 0.5rem;">
-            {{ post.date | date: "%B %d, %Y" }}
-        </p>
+    <main>
+        <h1>Latest Articles</h1>
         
-        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        
-        <br>
-        <a href="{{ post.url }}" style="color: var(--primary-green); font-weight: bold;">Read More &rarr;</a>
-    </article>
-    {% endfor %}
-    
-</div>
+        <div id="blog-container" class="grid"></div>
+
+        <script src="blog-data.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const container = document.getElementById('blog-container');
+
+                if (typeof blogPosts !== 'undefined' && container) {
+                    blogPosts.forEach(post => {
+                        const articleHTML = `
+                            <article class="card">
+                                <h2>${post.title}</h2>
+                                <p style="font-size:0.9rem; opacity:0.8; margin-bottom: 0.5rem;">${post.date}</p>
+                                <p>${post.summary}</p>
+                                <br>
+                                <a href="${post.link}" style="color: var(--primary-green); font-weight: bold;">Read More &rarr;</a>
+                            </article>
+                        `;
+                        container.innerHTML += articleHTML;
+                    });
+                } else {
+                    container.innerHTML = "<p>No posts found. Please check blog-data.js</p>";
+                }
+            });
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PMM Kickstarter. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -34,22 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply saved theme on load
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        themeToggle.innerText = '☀️ Light';
+        if(themeToggle) themeToggle.innerText = '☀️ Light';
     } else {
-        themeToggle.innerText = '🌙 Dark';
+        if(themeToggle) themeToggle.innerText = '🌙 Dark';
     }
 
     // Listen for click
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
-        let theme = 'light';
-        if (document.body.classList.contains('dark-mode')) {
-            theme = 'dark';
-            themeToggle.innerText = '☀️ Light';
-        } else {
-            themeToggle.innerText = '🌙 Dark';
-        }
-        localStorage.setItem('theme', theme);
-    });
+    if(themeToggle){
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            let theme = 'light';
+            if (document.body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                themeToggle.innerText = '☀️ Light';
+            } else {
+                themeToggle.innerText = '🌙 Dark';
+            }
+            localStorage.setItem('theme', theme);
+        });
+    }
 });

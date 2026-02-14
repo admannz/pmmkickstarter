@@ -14,5 +14,4 @@ const blogPosts = [
         summary: "What you should focus on when you are the first product marketer on the ground.",
         link: "post-first-90-days.html"
     }
-    // TO ADD A NEW POST: Copy the block above, paste it here, and change the details.
 ];
