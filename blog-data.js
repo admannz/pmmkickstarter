@@ -9,16 +9,16 @@ const blogPosts = [
     },
     {
         id: 2,
-        title: "Why Your Positioning Isn't Working",
-        date: "October 10, 2024",
-        summary: "Most startups mistake a tagline for positioning. Here is the difference and how to fix it...",
-        link: "posts/post-positioning-mistakes.html" 
+        title: "Know Your Currency",
+        date: "December 2024",
+        summary: "A reminder to think about and understand your personal currency. What motivates you and what you want to get paid in.",
+        link: "posts/Know-Your-Currency.html" 
     },
     {
         id: 1,
-        title: "The First 90 Days of a PMM",
-        date: "September 22, 2024",
-        summary: "What you should focus on when you are the first product marketer on the ground.",
-        link: "posts/post-first-90-days.html"
+        title: "Presentations and Demos",
+        date: "January 2023",
+        summary: "Do you need to do presentations or demos at work? Learn practical tips to overcome nerves, prepare effectively, and crush your delivery.",
+        link: "posts/Presentations-And-Demos.html"
     }
 ];
