@@ -63,30 +63,32 @@ nav {
     align-items: center;
 }
 
-/* styles.css */
+/* Replace your existing .logo section with this: */
 
-/* ----- Update these blocks ----- */
 .logo {
     text-decoration: none;
     display: flex;
     align-items: center;
+    /* This ensures the link is green, not blue or purple */
+    color: var(--primary-green); 
+}
+
+/* This specifically targets the visited state to prevent the purple color */
+.logo:visited {
+    color: var(--primary-green);
 }
 
 .logo img {
-    /* Slightly smaller max-height looks better next to text */
     max-height: 50px;
     width: auto;
-    /* Add space between the image and the text */
     margin-right: 12px;
 }
 
-/* ----- Add this new block right below the others ----- */
 .logo-text {
     font-size: 1.4rem;
-    font-weight: 700; /* Bold */
-    color: var(--primary-green); /* Uses your brand green color */
-    /* Optional: if you want white text in dark mode, uncomment the line below */
-    /* color: var(--text-color); */
+    font-weight: 700;
+    /* Ensures the text matches the parent link color */
+    color: inherit; 
 }
 
 .nav-links {
