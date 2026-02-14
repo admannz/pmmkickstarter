@@ -63,16 +63,30 @@ nav {
     align-items: center;
 }
 
+/* styles.css */
+
+/* ----- Update these blocks ----- */
 .logo {
     text-decoration: none;
     display: flex;
     align-items: center;
 }
 
-/* This controls the size of the logo in the navbar */
 .logo img {
-    max-height: 60px; /* Adjust this number if you want it bigger/smaller */
+    /* Slightly smaller max-height looks better next to text */
+    max-height: 50px;
     width: auto;
+    /* Add space between the image and the text */
+    margin-right: 12px;
+}
+
+/* ----- Add this new block right below the others ----- */
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700; /* Bold */
+    color: var(--primary-green); /* Uses your brand green color */
+    /* Optional: if you want white text in dark mode, uncomment the line below */
+    /* color: var(--text-color); */
 }
 
 .nav-links {
