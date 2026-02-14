@@ -25,14 +25,14 @@ const blogPosts = [
       id: 3,
         title: "Hooray For Generalists",
         date: "January 2023",
-        summary: "A tribute to the generalists—those who thrive in multiple disciplines and provide unique perspectives across workstreams.",
+        summary: "A tribute to the generalists, those who thrive in multiple disciplines and provide unique perspectives across workstreams.",
         link: "posts/Hooray-For-Generalists.html"  
     },
       {
       id: 2,
         title: "Surviving a Career Pivot",
         date: "September 2022",
-        summary: "Explore four models for career pivots—from iteration to a full reset—and how to identify your transferable skills.",
+        summary: "Explore four models for career pivots,from iteration to a full reset,and how to identify your transferable skills.",
         link: "posts/Surviving-Career-Pivots.html"  
       },
       {
