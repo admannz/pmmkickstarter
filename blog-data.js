@@ -42,8 +42,4 @@ const blogPosts = [
         summary: "Explore the core responsibilities of Product Marketing: influencing product strategy, creating market narratives, and orchestrating key workstreams.",
         link: "posts/PMM-Fundamentals.html"  
       }
-
-
-
-      Explore the core responsibilities of Product Marketing: influencing product strategy, creating market narratives, and orchestrating key workstreams.
 ];
