@@ -29,27 +29,41 @@
 
     <main>
         <h1>Latest Articles</h1>
-        <div class="grid">
-            <article class="card">
-                <h2>Why Your Positioning Isn't Working</h2>
-                <p style="font-size:0.9rem; opacity:0.8;">October 10, 2024</p>
-                <p>Most startups mistake a tagline for positioning. Here is the difference and how to fix it...</p>
-                <br>
-                <a href="#" style="color: var(--primary-green); font-weight: bold;">Read More &rarr;</a>
-            </article>
-            <article class="card">
-                <h2>The First 90 Days of a PMM</h2>
-                <p style="font-size:0.9rem; opacity:0.8;">September 22, 2024</p>
-                <p>What you should focus on when you are the first product marketer on the ground.</p>
-                <br>
-                <a href="#" style="color: var(--primary-green); font-weight: bold;">Read More &rarr;</a>
-            </article>
-        </div>
+        
+        <div id="blog-container" class="grid"></div>
+
+        <script src="blog-data.js"></script>
+
+        <script>
+            // Ensure the DOM is fully loaded before running
+            document.addEventListener('DOMContentLoaded', () => {
+                const container = document.getElementById('blog-container');
+
+                // Check if blogPosts exists (from blog-data.js) to prevent errors
+                if (typeof blogPosts !== 'undefined' && container) {
+                    blogPosts.forEach(post => {
+                        const articleHTML = `
+                            <article class="card">
+                                <h2>${post.title}</h2>
+                                <p style="font-size:0.9rem; opacity:0.8; margin-bottom: 0.5rem;">${post.date}</p>
+                                <p>${post.summary}</p>
+                                <br>
+                                <a href="${post.link}" style="color: var(--primary-green); font-weight: bold;">Read More &rarr;</a>
+                            </article>
+                        `;
+                        container.innerHTML += articleHTML;
+                    });
+                } else {
+                    container.innerHTML = "<p>No posts found. Please check blog-data.js</p>";
+                }
+            });
+        </script>
     </main>
 
     <footer>
         <p>&copy; 2024 PMM Kickstarter. All rights reserved.</p>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
